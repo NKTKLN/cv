@@ -1,5 +1,8 @@
 version: '3'
 
+vars:
+  CV_FILENAME: Kalinin_Nikita_CV
+
 tasks:
   # ======== Environment ========
   sync:
@@ -48,10 +51,10 @@ tasks:
     deps: [sync]
     cmds:
       - uv run rendercv render cv/data.yaml
-        --pdf-path ../output/cv.pdf
-        --typst-path ../output/cv.typ
-        --markdown-path ../output/cv.md
-        --html-path ../output/cv.html
+        --pdf-path ../output/{{.CV_FILENAME}}.pdf
+        --typst-path ../output/{{.CV_FILENAME}}.typ
+        --markdown-path ../output/{{.CV_FILENAME}}.md
+        --html-path ../output/{{.CV_FILENAME}}.html
         --png-path ../output/
         -nomd -nohtml -nopng
 
