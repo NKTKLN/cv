@@ -40,6 +40,7 @@ tmp.*
 cache/
 cache_data.duckdb
 cache_data.duckdb.*
+output/cv.typ
 
 # ========================
 # Jupyter Notebooks
@@ -72,19 +73,6 @@ coverage.xml
 *.token
 *.key
 *.pem
-
-# ========================
-# Training / ML outputs
-# ========================
-checkpoints/
-output/
-model/
-runs/                # e.g. for TensorBoard or wandb
-
-# ========================
-# nbQA artifacts
-# ========================
-__nbqa_cache__/
 
 # ========================
 # Custom ignore rules

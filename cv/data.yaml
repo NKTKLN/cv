@@ -1,0 +1,41 @@
+cv:
+  name: "Калинин Никита Викторович"
+  location: "Москва, Россия"
+  email: "nktkln@yandex.com"
+  phone: "+7 999 999 99 99"
+  website: https://nktkln.com
+  social_networks:
+    - network: Telegram
+      username: nktkln_work
+
+  sections:
+    О себе:
+      - >
+        Junior ML Engineer с сильной базой в Python и инженерной инфраструктуре.
+        Программирую с 2019 года. Обладаю развитым алгоритмическим мышлением и
+        системным подходом к проектированию решений. Интересуюсь архитектурой
+        ML-сервисов и построением воспроизводимых, масштабируемых систем.
+
+    Образование:
+      - institution: "МИРЭА — Российский технологический университет"
+        area: "Информационные системы и технологии (Фуллстек разработка)"
+        start_date: "2023"
+        end_date: "2027"
+        highlights:
+          - "Институт перспективных технологий и индустриального программирования"
+          - "Кафедра индустриального программирования"
+          - "Средний балл: 5.0"
+
+    Навыки:
+      - label: "Языки"
+        details: "Python, SQL, Bash"
+      - label: "ML / Data"
+        details: "NumPy, pandas"
+      - label: "Backend"
+        details: "FastAPI"
+      - label: "Базы данных"
+        details: "PostgreSQL, MongoDB, Redis, SQLite, MinIO"
+      - label: "DevOps / Infra"
+        details: "Docker, Terraform, Ansible, CI/CD, Prometheus, Grafana, Traefik, Consul, Proxmox"
+      - label: "Инструменты"
+        details: "Git, Linux"
