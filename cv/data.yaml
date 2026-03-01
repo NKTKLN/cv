@@ -19,8 +19,8 @@ cv:
     Образование:
       - institution: "МИРЭА — Российский технологический университет"
         area: "Информационные системы и технологии (Фуллстек разработка)"
-        start_date: "2023"
-        end_date: "2027"
+        start_date: "2023-09"
+        end_date: "2027-06"
         highlights:
           - "Институт перспективных технологий и индустриального программирования"
           - "Кафедра индустриального программирования"
@@ -30,7 +30,7 @@ cv:
       - label: "Языки"
         details: "Python, SQL, Bash"
       - label: "ML / Data"
-        details: "NumPy, pandas"
+        details: "NumPy, pandas, MpMath, SciPy"
       - label: "Backend"
         details: "FastAPI"
       - label: "Базы данных"
