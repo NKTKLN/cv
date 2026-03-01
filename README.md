@@ -3,6 +3,8 @@
 This repository contains the source for generating a professional CV using **RenderCV**.
 The CV content is defined in YAML and rendered into PDF using a Typst-based template.
 
+👉 **Download the latest CV:** [output/cv.pdf](output/cv.pdf)
+
 ## 📦 Dependencies
 
 * [Python 3.13+](https://www.python.org/downloads/)
