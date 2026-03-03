@@ -74,6 +74,8 @@ tasks:
 
   cv-fmt:
     desc: Format YAML files with yamlfmt
-    deps: [sync, cv-validate]
+    deps: [sync]
     cmds:
-      - uv run yamlfmt cv/*
+      - task: cv-validate
+      - yamlfmt cv/*
+
