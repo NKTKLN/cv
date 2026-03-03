@@ -1,5 +1,6 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
 cv:
-  name: "Калинин Никита Викторович"
+  name: "Калинин Никита"
   location: "Москва, Россия"
   email: "nktkln@yandex.com"
   phone: "+7 999 999 99 99"
@@ -7,14 +8,13 @@ cv:
   social_networks:
     - network: Telegram
       username: nktkln_work
-
   sections:
     О себе:
       - >
-        Junior ML Engineer с сильной базой в Python и инженерной инфраструктуре.
-        Программирую с 2019 года. Обладаю развитым алгоритмическим мышлением и
-        системным подходом к проектированию решений. Интересуюсь архитектурой
-        ML-сервисов и построением воспроизводимых, масштабируемых систем.
+        Junior ML Engineer с сильной базой в Python и инженерной инфраструктуре. Программирую
+        с 2019 года. Обладаю развитым алгоритмическим мышлением и системным подходом
+        к проектированию решений. Интересуюсь архитектурой ML-сервисов и построением
+        воспроизводимых, масштабируемых систем.
 
     Образование:
       - institution: "МИРЭА — Российский технологический университет"
@@ -25,7 +25,6 @@ cv:
           - "Институт перспективных технологий и индустриального программирования"
           - "Кафедра индустриального программирования"
           - "Средний балл: 5.0"
-
     Навыки:
       - label: "Языки"
         details: "Python, SQL, Bash"
@@ -36,6 +35,7 @@ cv:
       - label: "Базы данных"
         details: "PostgreSQL, MongoDB, Redis, SQLite, MinIO"
       - label: "DevOps / Infra"
-        details: "Docker, Terraform, Ansible, CI/CD, Prometheus, Grafana, Traefik, Consul, Proxmox"
+        details: "Docker, Terraform, Ansible, CI/CD, Prometheus, Grafana, Traefik,
+          Consul, Proxmox"
       - label: "Инструменты"
         details: "Git, Linux"

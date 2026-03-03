@@ -62,3 +62,18 @@ tasks:
     desc: Remove generated build artifacts
     cmds:
       - rm -rf ./output/*
+
+  cv-validate:
+    desc: Validate CV YAML against RenderCV JSON Schema
+    deps: [sync]
+    cmds:
+      - >
+        uv run check-jsonschema
+        --schemafile https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
+        cv/data.yaml
+
+  cv-fmt:
+    desc: Format YAML files with yamlfmt
+    deps: [sync, cv-validate]
+    cmds:
+      - uv run yamlfmt cv/*

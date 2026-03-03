@@ -13,6 +13,8 @@ dependencies = [
 dev = [
   "pre-commit>=4.5.1",
   "commitizen>=4.13.7",
+  "check-jsonschema>=0.37.0",
+  "google-yamlfmt>=0.21.0",
 ]
 
 [tool.coverage.report]
