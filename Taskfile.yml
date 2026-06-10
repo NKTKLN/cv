@@ -6,30 +6,40 @@ vars:
 tasks:
   # ======== Environment ========
   sync:
-    desc: Sync dependencies using uv
+    desc: Sync dependencies (dev group) using uv
     cmds:
-      - uv sync
+      - uv sync --all-groups
 
-  precommit:
-    desc: Install git hooks
-    deps: [sync]
+  sync-frozen:
+    desc: Sync dependencies using locked versions
     cmds:
-      - uv run pre-commit install
+      - uv sync --frozen --all-groups
 
   init:
     desc: Full project setup
-    deps: [sync, precommit]
+    cmds:
+      - task: sync
+      - task: precommit
+
+  # ======== Pre-commit ========
+  precommit:
+    desc: Install git hooks
+    cmds:
+      - uv run pre-commit install --install-hooks
+
+  precommit-run:
+    desc: Run pre-commit on all files
+    cmds:
+      - uv run pre-commit run --all-files
 
   # ======== Commitizen ========
   cz-commit:
     desc: Commit using Conventional Commits
-    deps: [sync]
     cmds:
       - uv run cz commit
 
   cz-check:
     desc: Check commit messages
-    deps: [sync]
     cmds:
       - uv run cz check
 
@@ -45,37 +55,36 @@ tasks:
     cmds:
       - git push --follow-tags
 
-  # ======== RenderCV ========
-  cv-render:
-    desc: Render CV from YAML to PDF
-    deps: [sync]
-    cmds:
-      - uv run rendercv render cv/data.yaml
-        --pdf-path ../output/{{.CV_FILENAME}}.pdf
-        --typst-path ../output/{{.CV_FILENAME}}.typ
-        --markdown-path ../output/{{.CV_FILENAME}}.md
-        --html-path ../output/{{.CV_FILENAME}}.html
-        --png-path ../output/
-        -nomd -nohtml -nopng
+  # ======== Formatting ========
 
-  cv-clean:
-    desc: Remove generated build artifacts
+  fmt:
+    desc: Format YAML files with yamlfmt
     cmds:
-      - rm -rf ./output/*
+      - task: validate
+      - yamlfmt cv/*
 
-  cv-validate:
+  validate:
     desc: Validate CV YAML against RenderCV JSON Schema
-    deps: [sync]
     cmds:
       - >
         uv run check-jsonschema
         --schemafile https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
         cv/data.yaml
 
-  cv-fmt:
-    desc: Format YAML files with yamlfmt
-    deps: [sync]
+  # ======== RenderCV ========
+  render:
+    desc: Render CV from YAML to PDF
     cmds:
-      - task: cv-validate
-      - yamlfmt cv/*
+      - uv run rendercv render cv/data.yaml
+        --pdf-path ../output/{{.CV_FILENAME}}.pdf
+        --typst-path ../output/{{.CV_FILENAME}}.typ
+        --markdown-path ../output/{{.CV_FILENAME}}.md
+        --html-path ../output/{{.CV_FILENAME}}.html
+        --png-path ../output/{{.CV_FILENAME}}.png
+        -nomd -nohtml
 
+  # ======== Other ========
+  clean:
+    desc: Remove generated build artifacts
+    cmds:
+      - rm -f ./output/*
