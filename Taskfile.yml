@@ -81,7 +81,7 @@ tasks:
         --markdown-path ../output/{{.CV_FILENAME}}.md
         --html-path ../output/{{.CV_FILENAME}}.html
         --png-path ../output/{{.CV_FILENAME}}.png
-        -nomd -nohtml -nopng
+        -nomd -nohtml
 
   # ======== Other ========
   clean:

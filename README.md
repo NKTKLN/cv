@@ -4,9 +4,12 @@ This repository contains the source files and automation required to build a pro
 
 ## 🚀 Latest CV
 
-The current PDF version is available here:
+<p align="center">
+  <img src="output/Kalinin_Nikita_CV_1.png" alt="CV screenshot 1" width="48%" />
+  <img src="output/Kalinin_Nikita_CV_2.png" alt="CV screenshot 2" width="48%" />
+</p>
 
-[Kalinin_Nikita_CV.pdf](output/Kalinin_Nikita_CV.pdf)
+The current PDF version is available here: [Kalinin_Nikita_CV.pdf](output/Kalinin_Nikita_CV.pdf)
 
 ## 📦 Dependencies
 
