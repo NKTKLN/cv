@@ -1,67 +1,67 @@
-# 📄 CV
+# 📄 Резюме
 
-This repository contains the source files and automation required to build a professional CV with [RenderCV](https://github.com/rendercv/rendercv). The CV content and design are maintained as YAML files, while the final PDF and Typst outputs are generated into the `output/` directory.
+Этот репозиторий содержит исходные файлы и автоматизацию, необходимые для создания резюме с помощью [RenderCV](https://github.com/rendercv/rendercv). Содержимое и дизайн резюме хранятся в YAML-файлах, а итоговые PDF- и Typst-файлы генерируются в директорию `output/`.
 
-## 🚀 Latest CV
+## 🚀 Актуальная версия резюме
 
 <p align="center">
-  <img src="output/Kalinin_Nikita_CV_1.png" alt="CV screenshot 1" width="48%" />
-  <img src="output/Kalinin_Nikita_CV_2.png" alt="CV screenshot 2" width="48%" />
+  <img src="output/Kalinin_Nikita_CV_1.png" alt="Скриншот резюме 1" width="48%" />
+  <img src="output/Kalinin_Nikita_CV_2.png" alt="Скриншот резюме 2" width="48%" />
 </p>
 
-The current PDF version is available here: [Kalinin_Nikita_CV.pdf](output/Kalinin_Nikita_CV.pdf)
+Текущая PDF-версия доступна здесь: [Kalinin_Nikita_CV.pdf](output/Kalinin_Nikita_CV.pdf)
 
-## 📦 Dependencies
+## 📦 Зависимости
 
 * [Python 3.13+](https://www.python.org/downloads/)
 * [uv](https://docs.astral.sh/uv/getting-started/installation/)
 * [Task](https://taskfile.dev/)
 
-## ⚡ Getting Started
+## ⚡ Быстрый старт
 
-Install all project dependencies:
+Установите все зависимости проекта:
 
 ```bash
 task sync
 ```
 
-Generate the CV:
+Сгенерируйте резюме:
 
 ```bash
 task render
 ```
 
-The generated files will be written to the `output/` directory. By default, the primary outputs are:
+Сгенерированные файлы будут сохранены в директории `output/`. По умолчанию основными выходными файлами являются:
 
 * `output/Kalinin_Nikita_CV.pdf`
 * `output/Kalinin_Nikita_CV.typ`
 
-## 📁 Project Structure
+## 📁 Структура проекта
 
 ```text
 cv/
-  data.yaml      # CV content: personal details, education, experience, skills, and projects
-  design.yaml    # RenderCV layout and design configuration
-output/          # Generated CV artifacts
-Taskfile.yml     # Automation commands for setup, validation, rendering, and release tasks
-pyproject.toml   # Python project metadata and dependencies
+  data.yaml      # Содержимое резюме: личные данные, образование, опыт, навыки и проекты
+  design.yaml    # Конфигурация макета и дизайна RenderCV
+output/          # Сгенерированные файлы резюме
+Taskfile.yml     # Команды автоматизации для установки, проверки, генерации и релизов
+pyproject.toml   # Метаданные Python-проекта и зависимости
 ```
 
-## ✏️ Editing the CV
+## ✏️ Редактирование резюме
 
-Update the CV content in:
+Обновляйте содержимое резюме в файле:
 
 ```text
 cv/data.yaml
 ```
 
-Adjust the layout, typography, and styling in:
+Настраивайте макет, типографику и стили в файле:
 
 ```text
 cv/design.yaml
 ```
 
-After making changes, regenerate the CV:
+После внесения изменений заново сгенерируйте резюме:
 
 ```bash
 task render
