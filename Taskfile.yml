@@ -68,7 +68,7 @@ tasks:
     cmds:
       - >
         uv run check-jsonschema
-        --schemafile https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
+        --schemafile https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
         cv/data.yaml
 
   # ======== RenderCV ========

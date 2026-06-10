@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+
+design:
+  theme: engineeringresumes
+
+  page:
+    size: a4
+    show_top_note: false
+
+  entries:
+    side_space: 0.15cm
+    highlights:
+      bullet: "•"
+      nested_bullet: "•"
+      space_left: 0.15cm
