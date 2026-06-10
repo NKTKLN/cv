@@ -21,7 +21,7 @@ task sync
 2. Generate the CV:
 
 ```bash
-task cv-render
+task render
 ```
 
 The generated files will appear in the `./output/` directory (e.g., `output/cv.pdf`).
@@ -29,5 +29,5 @@ The generated files will appear in the `./output/` directory (e.g., `output/cv.p
 ## 📝 Editing the CV
 
 * To update content: edit `cv/data.yaml`
-* To modify layout and styling: edit `cv/theme.yaml`
-* Rebuild with: `task cv-render`
+* To modify layout and styling: edit `cv/design.yaml`
+* Rebuild with: `task render`
