@@ -1,8 +1,12 @@
-# 🤵‍♂️ CV
+# 📄 CV
 
-This repository contains the source for generating a professional CV using **RenderCV**.
+This repository contains the source files and automation required to build a professional CV with [RenderCV](https://github.com/rendercv/rendercv). The CV content and design are maintained as YAML files, while the final PDF and Typst outputs are generated into the `output/` directory.
 
-👉 **Download the latest CV:** [Kalinin_Nikita_CV.pdf](output/Kalinin_Nikita_CV.pdf)
+## 🚀 Latest CV
+
+The current PDF version is available here:
+
+[Kalinin_Nikita_CV.pdf](output/Kalinin_Nikita_CV.pdf)
 
 ## 📦 Dependencies
 
@@ -10,24 +14,52 @@ This repository contains the source for generating a professional CV using **Ren
 * [uv](https://docs.astral.sh/uv/getting-started/installation/)
 * [Task](https://taskfile.dev/)
 
-## 🛠️ Quick Start
+## ⚡ Getting Started
 
-1. Install dependencies:
+Install all project dependencies:
 
 ```bash
 task sync
 ```
 
-2. Generate the CV:
+Generate the CV:
 
 ```bash
 task render
 ```
 
-The generated files will appear in the `./output/` directory (e.g., `output/cv.pdf`).
+The generated files will be written to the `output/` directory. By default, the primary outputs are:
 
-## 📝 Editing the CV
+* `output/Kalinin_Nikita_CV.pdf`
+* `output/Kalinin_Nikita_CV.typ`
 
-* To update content: edit `cv/data.yaml`
-* To modify layout and styling: edit `cv/design.yaml`
-* Rebuild with: `task render`
+## 📁 Project Structure
+
+```text
+cv/
+  data.yaml      # CV content: personal details, education, experience, skills, and projects
+  design.yaml    # RenderCV layout and design configuration
+output/          # Generated CV artifacts
+Taskfile.yml     # Automation commands for setup, validation, rendering, and release tasks
+pyproject.toml   # Python project metadata and dependencies
+```
+
+## ✏️ Editing the CV
+
+Update the CV content in:
+
+```text
+cv/data.yaml
+```
+
+Adjust the layout, typography, and styling in:
+
+```text
+cv/design.yaml
+```
+
+After making changes, regenerate the CV:
+
+```bash
+task render
+```
