@@ -10,6 +10,8 @@ cv:
   social_networks:
     - network: Telegram
       username: "nktkln_work"
+    - network: GitHub
+      username: "NKTKLN"
 
   sections:
     О себе:
@@ -29,6 +31,8 @@ cv:
           Командный исследовательско-инженерный проект: веб-сервис и вычислительный
           модуль для моделирования медицинских информационно-измерительных систем
           реального времени и расчета их performance-характеристик.
+
+          Репозиторий: [github.com/NKTKLN/quick](https://github.com/NKTKLN/quick)
         highlights:
           - >
             Участвовал в проектировании архитектуры с разделением на уровень устройства
@@ -50,8 +54,6 @@ cv:
             Работал с моделями систем массового обслуживания с конечным буфером,
             коррелированным входным потоком и нетерпеливыми заявками для анализа
             поведения системы в переходном и стационарном режимах.
-          - >
-            Репозиторий: [github.com/NKTKLN/quick](https://github.com/NKTKLN/quick)
 
       - name: "Code Kata — реализация ML-алгоритмов и Kaggle-пайплайнов"
         summary: >
@@ -59,6 +61,8 @@ cv:
           для реализации классических алгоритмов машинного обучения с нуля, сравнения
           с библиотечными реализациями и построения end-to-end пайплайнов на табличных
           задачах.
+
+          Репозиторий: [github.com/NKTKLN/code-kata](https://github.com/NKTKLN/code-kata)
         highlights:
           - >
             Реализовал с нуля набор базовых ML-алгоритмов и оберток: линейную и
@@ -77,8 +81,6 @@ cv:
             Использовал scikit-learn, NumPy, pandas, Matplotlib, Seaborn, XGBoost,
             LightGBM, CatBoost и Optuna для экспериментов, оценки качества моделей
             и визуализации метрик.
-          - >
-            Репозиторий: [github.com/NKTKLN/code-kata](https://github.com/NKTKLN/code-kata)
 
     Навыки:
       - label: "Языки программирования"
