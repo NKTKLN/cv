@@ -6,6 +6,10 @@ design:
   page:
     size: a4
     show_top_note: false
+    top_margin: 1.5cm
+    bottom_margin: 1.5cm
+    left_margin: 1.5cm
+    right_margin: 1.5cm
 
   entries:
     side_space: 0.15cm

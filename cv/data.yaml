@@ -18,37 +18,43 @@ cv:
       - >
         Junior AI Backend / ML Engineer: Python, FastAPI, ML и сильная база
         в прикладной математике. Разрабатываю backend-сервисы и ML-системы
-        полного цикла: REST API с валидацией и кэшированием, RAG-сервис
-        с векторным поиском, Docker-развертывание, реализация ML-алгоритмов
+        полного цикла: асинхронный backend LLM-ассистента с агентным
+        OpenAI tool-calling, вычислительный REST-сервис с кэшированием,
+        реализация ML-алгоритмов и алгоритмов векторного поиска (HNSW, LSH)
         с нуля с бенчмарками против scikit-learn/XGBoost.
       - >
         Production-подход в каждом проекте: строгая типизация (mypy strict),
-        структурированное логирование, security-аудит зависимостей,
-        воспроизводимые окружения, conventional commits. Соавтор двух научных
+        security-аудит зависимостей, воспроизводимые окружения,
+        conventional commits. Соавтор двух научных
         публикаций и зарегистрированной программы для ЭВМ.
 
     Проекты:
-      - name: "AI Notes API — RAG-сервис для семантического поиска по заметкам"
+      - name: "AI Notes API — асинхронный backend LLM-ассистента над заметками"
         summary: >
-          Личный AI backend-проект (в активной разработке): REST API для
-          ведения заметок с семантическим поиском и LLM-ответами на вопросы
-          по собственным данным через RAG-пайплайн.
+          Личный backend-проект для LLM-ассистента над приватными заметками
+          (в активной разработке): асинхронный FastAPI-сервис с агентным циклом
+          OpenAI tool-calling, долгосрочной памятью диалога и фоновой генерацией.
         highlights:
           - >
-            Реализую RAG-пайплайн: построение embeddings, векторное хранилище
-            для семантического поиска и генерация ответов LLM с опорой
-            на найденный контекст.
+            Спроектировал асинхронный сервис на FastAPI + async SQLAlchemy 2.0 /
+            PostgreSQL по слоистой архитектуре (api / services / repositories);
+            довел покрытие до ~92% (376 тестов) при строгом mypy и CI
+            на Postgres + Redis.
           - >
-            Разрабатываю backend на FastAPI (JWT, CRUD, Pydantic-валидация,
-            OpenAPI) с PostgreSQL и Redis в Docker; тесты pytest и CI/CD.
+            Реализовал агентный цикл OpenAI tool-calling с реестром инструментов:
+            модель сама ищет и изменяет заметки пользователя через CRUD-инструменты
+            в рамках одного диалога.
+          - >
+            Устранил гонки при параллельной генерации, заменив read-modify-write
+            на атомарный UPDATE ... WHERE status=IDLE ... RETURNING — ровно одна
+            активная генерация на сессию без распределенных локов.
 
       - name: "QUICK — Вычислительный backend-сервис моделирования МИИС"
         summary: >
           Исследовательско-инженерный проект (математическая постановка — в
           соавторстве, весь код — мой, 144 коммита): REST API и веб-интерфейс
           вокруг вычислительного ядра для моделирования медицинских
-          информационно-измерительных систем реального времени (~7,5 тыс. строк
-          Python).
+          информационно-измерительных систем (~7,5 тыс. строк Python).
 
           Репозиторий: [github.com/NKTKLN/quick](https://github.com/NKTKLN/quick)
         highlights:
@@ -64,8 +70,9 @@ cv:
             целиком в высокой точности без потери корректности.
           - >
             Спроектировал версионированный REST API на FastAPI (Pydantic-валидация,
-            обработка ошибок, OpenAPI), multi-stage Docker-сборку и слоистую
-            архитектуру: одно ядро обслуживает REST API и Streamlit-интерфейс.
+            обработка ошибок 422/500, OpenAPI), multi-stage Docker-сборку (non-root,
+            healthcheck) и слоистую архитектуру: одно ядро обслуживает REST API
+            и Streamlit-интерфейс с Plotly-визуализацией.
 
       - name: "Code Kata — ML-алгоритмы с нуля и Kaggle-пайплайны"
         summary: >
@@ -88,21 +95,20 @@ cv:
           - >
             Построил end-to-end пайплайны для Kaggle (Spaceship Titanic — 0.805,
             Titanic — 0.782): EDA, доменный feature engineering, сравнение
-            CatBoost/LightGBM/XGBoost и Optuna-тюнинг.
+            CatBoost/LightGBM/XGBoost и Optuna-тюнинг (TPE, 150 trials, GPU).
 
     Навыки:
       - label: "Языки программирования"
         details: "Python (строгая типизация, mypy strict), SQL, Go (базовый backend-опыт)"
       - label: "Backend"
-        details: "FastAPI, Pydantic v2, REST API, JWT-аутентификация, OpenAPI/Swagger,
-          кэширование, структурированное логирование (loguru), паттерны проектирования,
-          слоистая архитектура"
+        details: "FastAPI, async SQLAlchemy 2.0, Pydantic v2, REST API, JWT-аутентификация,
+          Celery, SSE, Alembic, кэширование, логирование (loguru), слоистая архитектура"
       - label: "AI/ML"
-        details: "scikit-learn, XGBoost, CatBoost, LightGBM, Optuna, RAG, embeddings,
-          vector search (HNSW, LSH), LLM-интеграция, оценка моделей, кросс-валидация"
+        details: "scikit-learn, XGBoost, CatBoost, LightGBM, Optuna, vector search
+          (HNSW, LSH), LLM-интеграция (OpenAI), tool-calling, structured output, prompt engineering"
       - label: "Данные"
-        details: "pandas, NumPy, SciPy, feature engineering, препроцессинг, EDA, Matplotlib,
-          Seaborn, Plotly, Streamlit"
+        details: "pandas, NumPy, SciPy, feature engineering, EDA, Matplotlib, Seaborn,
+          Plotly, Streamlit"
       - label: "Базы данных"
         details: "PostgreSQL, Redis, MongoDB, SQLite, DuckDB, MinIO"
       - label: "DevOps и инструменты"
@@ -119,8 +125,7 @@ cv:
           - "Барабанова Е.А."
           - "**Калинин Н.В.**"
         summary: "Архитектура decision-support веб-сервиса для расчета нестационарных
-          характеристик производительности системы, хранения результатов моделирования
-          и формирования рекомендаций по конфигурации МИИС."
+          характеристик системы и формирования рекомендаций по конфигурации МИИС."
       - title: "Модель медицинской информационно-измерительной системы, основанной
           на беспроводной оптической технологии передачи данных"
         authors:
@@ -144,19 +149,16 @@ cv:
         area: "Информационные системы и технологии"
         start_date: "2023-09"
         end_date: "2027-06"
-        summary: "Профиль подготовки: full-stack разработка; дополнительно развиваюсь
-          в ML Engineering и AI-инфраструктуре."
         highlights:
-          - "Институт перспективных технологий и индустриального программирования"
-          - "Кафедра индустриального программирования"
-          - "Средний балл: 5.0 / 5.0"
+          - "Институт перспективных технологий и индустриального программирования,
+            кафедра индустриального программирования"
+          - "Средний балл: 5.0 / 5.0; профиль — full-stack, развиваюсь в ML / AI-инфраструктуре"
 
     Языки:
       - label: "Русский"
         details: "Родной"
       - label: "Английский"
-        details: "B2 — свободно читаю техническую документацию, использую английский
-          в инженерной коммуникации"
+        details: "B2 — техническая документация и инженерная коммуникация"
 
 settings:
   render_command:
