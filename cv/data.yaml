@@ -16,19 +16,43 @@ cv:
   sections:
     О себе:
       - >
-        Junior AI Backend / ML Engineer: Python, FastAPI, ML и сильная база
-        в прикладной математике. Разрабатываю backend-сервисы и ML-системы
-        полного цикла: асинхронный backend LLM-ассистента с агентным
-        OpenAI tool-calling, вычислительный REST-сервис с кэшированием,
-        реализация ML-алгоритмов и алгоритмов векторного поиска (HNSW, LSH)
-        с нуля с бенчмарками против scikit-learn/XGBoost.
+        Junior ML Engineer: классический и табличный ML, прикладная математика
+        и production-инжиниринг на Python. Реализую ML-алгоритмы и алгоритмы
+        векторного поиска (HNSW, LSH) с нуля и подтверждаю бенчмарками против
+        scikit-learn/XGBoost (расхождение в тысячных долях метрики); строю
+        end-to-end пайплайны для Kaggle (Spaceship Titanic 0.805) с feature
+        engineering и Optuna-тюнингом.
       - >
-        Production-подход в каждом проекте: строгая типизация (mypy strict),
-        security-аудит зависимостей, воспроизводимые окружения,
-        conventional commits. Соавтор двух научных
-        публикаций и зарегистрированной программы для ЭВМ.
+        К ML-навыкам прилагается реальный production-backend опыт: асинхронный
+        backend LLM-ассистента с агентным OpenAI tool-calling и вычислительный
+        REST-сервис на FastAPI с кэшированием. Строгая типизация (mypy strict),
+        security-аудит зависимостей, воспроизводимые окружения, CI. Соавтор двух
+        научных публикаций и зарегистрированной программы для ЭВМ.
 
     Проекты:
+      - name: "Code Kata — ML-алгоритмы с нуля и Kaggle-пайплайны"
+        summary: >
+          Личный ML-проект: классические алгоритмы машинного обучения,
+          реализованные с нуля на Python/NumPy и подтвержденные бенчмарками
+          против библиотечных реализаций, плюс end-to-end пайплайны
+          для Kaggle-соревнований.
+
+          Репозиторий: [github.com/NKTKLN/code-kata](https://github.com/NKTKLN/code-kata)
+        highlights:
+          - >
+            Реализовал с нуля gradient boosting (с ручным выводом градиентов),
+            random forest, деревья решений, bagging, stacking, kNN, линейную
+            и логистическую регрессию; бенчмарки подтвердили точность на уровне
+            scikit-learn/XGBoost (расхождение в тысячных долях метрики).
+          - >
+            Построил end-to-end пайплайны для Kaggle (Spaceship Titanic — 0.805,
+            Titanic — 0.782): EDA, доменный feature engineering, сравнение
+            CatBoost/LightGBM/XGBoost и Optuna-тюнинг (TPE, 150 trials, GPU).
+          - >
+            Реализовал и сравнил 4 алгоритма приближенного поиска ближайших
+            соседей (HNSW, LSH, k-d trees, Annoy-подобный индекс) по точности,
+            скорости и памяти — основа vector search в RAG-системах.
+
       - name: "AI Notes API — асинхронный backend LLM-ассистента над заметками"
         summary: >
           Личный backend-проект для LLM-ассистента над приватными заметками
@@ -41,8 +65,8 @@ cv:
             довел покрытие до ~92% (376 тестов) при строгом mypy и CI
             на Postgres + Redis.
           - >
-            Реализовал агентный цикл OpenAI tool-calling с реестром инструментов:
-            модель сама ищет и изменяет заметки пользователя через CRUD-инструменты
+            Реализовал агентный цикл OpenAI tool-calling с реестром из
+            5 CRUD-инструментов: модель сама ищет и изменяет заметки пользователя
             в рамках одного диалога.
           - >
             Устранил гонки при параллельной генерации, заменив read-modify-write
@@ -74,41 +98,20 @@ cv:
             healthcheck) и слоистую архитектуру: одно ядро обслуживает REST API
             и Streamlit-интерфейс с Plotly-визуализацией.
 
-      - name: "Code Kata — ML-алгоритмы с нуля и Kaggle-пайплайны"
-        summary: >
-          Личный ML-проект: классические алгоритмы машинного обучения,
-          реализованные с нуля на Python/NumPy и подтвержденные бенчмарками
-          против библиотечных реализаций, плюс end-to-end пайплайны
-          для Kaggle-соревнований.
-
-          Репозиторий: [github.com/NKTKLN/code-kata](https://github.com/NKTKLN/code-kata)
-        highlights:
-          - >
-            Реализовал с нуля gradient boosting (с ручным выводом градиентов),
-            random forest, деревья решений, bagging, stacking, kNN, линейную
-            и логистическую регрессию; бенчмарки подтвердили точность на уровне
-            scikit-learn/XGBoost (расхождение в тысячных долях метрики).
-          - >
-            Реализовал и сравнил 4 алгоритма приближенного поиска ближайших
-            соседей (HNSW, LSH, k-d trees, Annoy-подобный индекс) по точности,
-            скорости и памяти — основа vector search в RAG-системах.
-          - >
-            Построил end-to-end пайплайны для Kaggle (Spaceship Titanic — 0.805,
-            Titanic — 0.782): EDA, доменный feature engineering, сравнение
-            CatBoost/LightGBM/XGBoost и Optuna-тюнинг (TPE, 150 trials, GPU).
-
     Навыки:
       - label: "Языки программирования"
         details: "Python (строгая типизация, mypy strict), SQL, Go (базовый backend-опыт)"
-      - label: "Backend"
-        details: "FastAPI, async SQLAlchemy 2.0, Pydantic v2, REST API, JWT-аутентификация,
-          Celery, SSE, Alembic, кэширование, логирование (loguru), слоистая архитектура"
       - label: "AI/ML"
-        details: "scikit-learn, XGBoost, CatBoost, LightGBM, Optuna, vector search
-          (HNSW, LSH), LLM-интеграция (OpenAI), tool-calling, structured output, prompt engineering"
+        details: "scikit-learn, XGBoost, CatBoost, LightGBM, Optuna, реализация
+          ML-алгоритмов с нуля, кросс-валидация и подбор гиперпараметров, оценка
+          моделей (ROC/PR, confusion matrix), vector search (HNSW, LSH);
+          LLM-интеграция (OpenAI), tool-calling, structured output, prompt engineering"
       - label: "Данные"
         details: "pandas, NumPy, SciPy, feature engineering, EDA, Matplotlib, Seaborn,
           Plotly, Streamlit"
+      - label: "Backend"
+        details: "FastAPI, async SQLAlchemy 2.0, Pydantic v2, REST API, JWT-аутентификация,
+          Celery, SSE, Alembic, кэширование, логирование (loguru), слоистая архитектура"
       - label: "Базы данных"
         details: "PostgreSQL, Redis, MongoDB, SQLite, DuckDB, MinIO"
       - label: "DevOps и инструменты"
