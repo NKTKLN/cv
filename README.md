@@ -36,17 +36,6 @@ task render
 * `output/Kalinin_Nikita_CV.pdf`
 * `output/Kalinin_Nikita_CV.typ`
 
-## 📁 Структура проекта
-
-```text
-cv/
-  data.yaml      # Содержимое резюме: личные данные, образование, опыт, навыки и проекты
-  design.yaml    # Конфигурация макета и дизайна RenderCV
-output/          # Сгенерированные файлы резюме
-Taskfile.yml     # Команды автоматизации для установки, проверки, генерации и релизов
-pyproject.toml   # Метаданные Python-проекта и зависимости
-```
-
 ## ✏️ Редактирование резюме
 
 Обновляйте содержимое резюме в файле:
@@ -61,8 +50,40 @@ cv/data.yaml
 cv/design.yaml
 ```
 
+Перед генерацией можно проверить YAML на соответствие схеме RenderCV:
+
+```bash
+task validate
+```
+
 После внесения изменений заново сгенерируйте резюме:
 
 ```bash
 task render
 ```
+
+## 🧰 Вспомогательные материалы
+
+* [`docs/resume-rules.md`](docs/resume-rules.md) — свод правил сильного инженерного
+  резюме и чек-лист перед сборкой.
+* [`projects/`](projects/) — разборы проектов под целевую роль: честное
+  позиционирование, готовые буллеты и ATS-ключевики. Источник фактов для `data.yaml`.
+* [`prompts/project-analysis-prompt.md`](prompts/project-analysis-prompt.md) — промт
+  для генерации новых разборов в том же формате.
+
+## 🤖 Claude Skills workflow
+
+В репозиторий добавлены project-local Claude Code skills для улучшения резюме:
+
+```text
+/cv-pipeline
+/diagnoser
+/recruiter
+/rewriter
+/hiring-manager
+/application-pack
+```
+
+Они используют `cv/data.yaml` как источник резюме, `docs/resume-rules.md` как правила качества и `projects/*.md` как доказательную базу для фактов.
+
+Подробности: [`docs/claude-skills.md`](docs/claude-skills.md).
